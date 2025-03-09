@@ -1,0 +1,29 @@
+{
+  "name": "zolabun",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.9",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "flowbite": "^3.1.2",
+    "h5p-standalone": "3.8.0"
+  },
+  "scripts": {
+    "clear": "rm -rf ./docs",
+    "tailwind:watch": "bun tailwindcss -i ./tailwind.css -o ./static/css/style.css --watch",
+    "tailwind:build": "bun tailwindcss -i ./tailwind.css -o ./static/css/style.css --minify",
+    "ts:watch": "bun build --outdir ./static/js ./ts/bundle.ts ./ts/main.ts --watch",
+    "ts:build": "bun build --outdir ./static/js ./ts/bundle.ts ./ts/main.ts --minify",
+    "zola:watch": "zola serve",
+    "zola:build": "zola build --output-dir ./docs/",
+    "prod": "bun clear && bun ts:build && bun tailwind:build && bun zola:build",
+    "watch": "bun ts:watch & bun tailwind:watch & bun zola:watch"
+  }
+}

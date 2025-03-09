@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ffmdev</title>
+        <link rel="icon" type="image/x-icon" href="{{ get_url(path="favicon.ico", cachebust=true) | safe }}">
+        <link rel="stylesheet" href="{{ get_url(path="/css/style.css", cachebust=true) | safe }}" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script type="text/javascript" src="{{ get_url(path="/js/main.js", cachebust=true) | safe }}"></script>
+    </head>
+    <body class="bg-zinc-950 text-white
+        [&::-webkit-scrollbar]:w-1
+        [&::-webkit-scrollbar-track]:bg-zinc-950
+        [&::-webkit-scrollbar-thumb]:bg-zinc-500">
+
+        {% include 'includes/nav.html' %}
+
+        <div class="m-auto max-w-5xl w-full bg-zinc-900 p-4 mt-16 mb-11">
+
+            <div id="content" class="prose prose-invert max-w-none ">
+                {% block content %} placeholder content {% endblock content %}
+            </div>
+
+        </div>
+
+        {% include 'includes/footer.html' %}
+
+    </body>
+</html>

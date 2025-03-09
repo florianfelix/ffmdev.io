@@ -1,1 +1,1 @@
-console.log("hello from main");
+import "./theme.ts";
